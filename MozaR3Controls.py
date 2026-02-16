@@ -22,15 +22,15 @@ def R3get_inputs():
 
     pygame.event.pump()  
 
-    left_stick_x = joystick.get_axis(0)
-    rt_trigger = joystick.get_axis(2)
+    Steering = joystick.get_axis(0)
+    Throttle_input = joystick.get_axis(2)
 
 
-    left_stick_x = r3apply_deadzone(left_stick_x)
+    Steering = r3apply_deadzone(Steering)
 
-    throttle_normalized = (rt_trigger + 1) / 2
+    throttle_normalized = (Throttle_input + 1) / 2
     throttle = int(throttle_normalized * 255)
 
-    steering = int(left_stick_x * 100)
+    steering = int(Steering * 100)
 
     return throttle, steering
