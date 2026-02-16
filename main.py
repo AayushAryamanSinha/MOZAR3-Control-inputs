@@ -1,4 +1,5 @@
 from controls import get_inputs
+from MozaR3Controls import R3get_inputs
 from transmitter import Transmitter
 import pygame
 import time
@@ -14,18 +15,19 @@ tx = Transmitter(ESP32_IP, ESP32_PORT)
 SEND_INTERVAL = 1 / 50 
 last_send = 0
 
+
 print("Starting control loop...")
 
 
 try:
     while True:
-        throttle, steering = get_inputs()
+        throttle, steering = R3get_inputs()
 
         now = time.time()
 
         if now - last_send >= SEND_INTERVAL:
             tx.send(throttle, steering)
-            print(f"Throttle: {throttle} | Steering: {steering} | To: {ESP32_IP}"     )
+            print(f"Throttle: {throttle} | Steering: {steering} | To: {ESP32_IP}")
             last_send = now
 
 except KeyboardInterrupt:
