@@ -1,9 +1,11 @@
 #include <WiFi.h>
 #include <WiFiUdp.h>
-#include <ESP32Servo.h>
+#include <ESP32Servo.h> 
 
-const char* ssid = "WhiteSky-TheM";
-const char* password = "rx24j2ur";
+#include "secrets.h"
+
+const char* ssid = WIFI_SSID;
+const char* password = WIFI_PASSWORD;
 
 WiFiUDP udp;
 const int localPort = 4210;
