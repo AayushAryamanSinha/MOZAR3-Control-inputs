@@ -33,4 +33,4 @@ def get_inputs():
 
     steering = int(left_stick_x * 100)
 
-    return throttle, steering
+    return throttle + 1, -steering

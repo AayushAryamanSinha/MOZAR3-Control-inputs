@@ -7,7 +7,7 @@ import os
 import sys
 
 
-ESP32_IP = os.getenv("ESP32_IP", "127.0.0.1")
+ESP32_IP = os.getenv("ESP32_IP")
 ESP32_PORT = 4210
 
 tx = Transmitter(ESP32_IP, ESP32_PORT)
@@ -21,7 +21,7 @@ print("Starting control loop...")
 
 try:
     while True:
-        throttle, steering = R3get_inputs()
+        throttle, steering = get_inputs()
 
         now = time.time()
 
