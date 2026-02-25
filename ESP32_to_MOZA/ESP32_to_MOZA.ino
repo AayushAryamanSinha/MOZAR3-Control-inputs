@@ -2,7 +2,7 @@
 #include <WiFiUdp.h>
 #include <ESP32Servo.h> 
 
-#include "secrets.h"
+#include "passwords.h"
 
 const char* ssid = WIFI_SSID;
 const char* password = WIFI_PASSWORD;
